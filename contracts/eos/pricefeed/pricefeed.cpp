@@ -1,3 +1,5 @@
+#define LIQUIDX
+
 #include <cmath>
 #include "../dappservices/cron.hpp"
 #include "../dappservices/oracle.hpp"

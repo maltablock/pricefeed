@@ -54,6 +54,22 @@
     "oracle-self-history",
     "oracle-random",
     "oracle-sister-chain",
-    "cron-dapp-service"
+    "cron-dapp-service",
+    "liquidx",
+    "eosio-chains",
+    "all-dapp-services",
+    "log-dapp-service",
+    "ipfs-dapp-service",
+    "vaccounts-dapp-service",
+    "storage-dapp-service",
+    "auth-dapp-service",
+    "history-dapp-service",
+    "readfn-dapp-service",
+    "dns-dapp-service",
+    "vcpu-dapp-service",
+    "oracle-foreign-chain",
+    "oracle-wolframalpha",
+    "oracle-sql",
+    "oracle-vcpu"
   ]
 }
