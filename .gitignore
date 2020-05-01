@@ -187,3 +187,8 @@ test/oracleconsumer.spec.js
 logs/
 *.sqlite
 contracts/eos/*-prefix/
+contracts/eos/cronconsumer/cronconsumer.cpp
+contracts/eos/dappservices/_cron_impl.hpp
+models/dapp-services/cron.json
+services/cron-dapp-service-node/index.js
+test/cronconsumer.spec.js

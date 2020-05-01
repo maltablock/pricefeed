@@ -53,6 +53,7 @@
     "oracle-web",
     "oracle-self-history",
     "oracle-random",
-    "oracle-sister-chain"
+    "oracle-sister-chain",
+    "cron-dapp-service"
   ]
 }
