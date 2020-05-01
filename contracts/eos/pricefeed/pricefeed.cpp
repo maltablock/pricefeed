@@ -16,6 +16,8 @@
 
 #define CONTRACT_NAME() pricefeed
 
+#define TEST_ACTIONS
+
 // define custom filter
 // #undef ORACLE_HOOK_FILTER
 // #define ORACLE_HOOK_FILTER(uri, data) filter_result(uri, data);
@@ -260,6 +262,21 @@ int64_t get_feed_length(const eosio::symbol_code &symbolCode) {
   auto newest_price = --pricefeed_table.end();
   return newest_price->counter - oldest_price->counter + 1;
 }
+
+#ifdef TEST_ACTIONS
+// just a test action should be removed
+ACTION triggeroracle(symbol_code symbolCode) {
+  require_auth(get_self());
+  invokeoracle(symbolCode);
+}
+
+ACTION triggercron(symbol_code symbolCode) {
+  require_auth(get_self());
+  timer_payload payload = timer_payload{.symbolCode = symbolCode};
+  std::vector<char> packed_payload = eosio::pack(payload);
+  schedule_timer(name(payload.symbolCode.raw()), packed_payload, 3);
+}
+#endif
 
 CONTRACT_END((settokencfg)(unstuck)
 #ifdef TEST_ACTIONS
