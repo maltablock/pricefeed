@@ -1,4 +1,4 @@
-# pricefeed 💲🤱
+# Malta Block Pricefeed
 
 A pricefeed contract using Oracle Service from LiquidApps.
 Works on WAX network through LiquidX.
@@ -13,5 +13,5 @@ zeus compile pricefeed --sidechain liquidxxxwax
 
 ## License
 
-Telegram WAX Signup Bot is [MIT licensed](./LICENSE).
+Malta Block Pricefeed is [MIT licensed](./LICENSE).
 
