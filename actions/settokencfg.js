@@ -13,28 +13,32 @@ const CONTRACT_ACCOUNT = accounts[accounts.length - 1]
 
 async function action() {
   try {
-    const apiEndpoint = `min-api.cryptocompare.com/data/price?fsym=EOS&tsyms=USD&api_key=5c321a996c46d05d7b64cad200fee4718fbe2dac603daa4c0acedcffe6a1e465`;
-    const uri = `https+json://USD/${apiEndpoint}`;
+    // const apiEndpoint = `min-api.cryptocompare.com/data/price?fsym=EOS&tsyms=USD&api_key=5c321a996c46d05d7b64cad200fee4718fbe2dac603daa4c0acedcffe6a1e465`;
+    // const uri = `https+json://USD/${apiEndpoint}`;
 
-    await sendTransaction([{
-      account: CONTRACT_ACCOUNT,
-      name: `settokencfg`,
-      authorization: [
-        {
-          actor: CONTRACT_ACCOUNT,
-          permission: `active`
-        }
-      ],
-      data: {
-        symbolCode: `EOS`,
-        uri: Buffer.from(uri, "utf8"),
-        average_over: 288,
-        fetch_interval_seconds: 5 * 60,
-        active: true,
-        initialPrice: 0,
-        strategy: 1,
-      }
-    },
+    const apiEndpoint = `api.coingecko.com/api/v3/simple/price?ids=wax&vs_currencies=usd`;
+    const uri = `https+json://wax.usd/${apiEndpoint}`;
+
+    await sendTransaction([
+    // {
+    //   account: CONTRACT_ACCOUNT,
+    //   name: `settokencfg`,
+    //   authorization: [
+    //     {
+    //       actor: CONTRACT_ACCOUNT,
+    //       permission: `active`
+    //     }
+    //   ],
+    //   data: {
+    //     symbolCode: `EOS`,
+    //     uri: Buffer.from(uri, "utf8"),
+    //     average_over: 288,
+    //     fetch_interval_seconds: 5 * 60,
+    //     active: true,
+    //     initialPrice: 0,
+    //     strategy: 1,
+    //   }
+    // },
     // {
     //   account: CONTRACT_ACCOUNT,
     //   name: `settokencfg`,
@@ -54,6 +58,25 @@ async function action() {
     //     strategy: 0,
     //   }
     // },
+    {
+      account: CONTRACT_ACCOUNT,
+      name: `settokencfg`,
+      authorization: [
+        {
+          actor: CONTRACT_ACCOUNT,
+          permission: `active`
+        }
+      ],
+      data: {
+        symbolCode: `WAX`,
+        uri: Buffer.from(uri, "utf8"),
+        average_over: 288,
+        fetch_interval_seconds: 5 * 60,
+        active: true,
+        initialPrice: 0,
+        strategy: 1,
+      }
+    },
     ]);
     process.exit(0);
   } catch (error) {

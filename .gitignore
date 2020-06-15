@@ -317,3 +317,5 @@ test/sidechain-readfn.spec.js
 test/sidechain-storage.spec.js
 test/sidechain-vaccount.spec.js
 services
+
+eosiac.yml
