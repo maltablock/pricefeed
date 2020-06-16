@@ -12,9 +12,6 @@ const CONTRACT_ACCOUNT = accounts[accounts.length - 1]
 
 async function action() {
   try {
-    const apiEndpoint = `min-api.cryptocompare.com/data/price?fsym=EOS&tsyms=USD&api_key=5c321a996c46d05d7b64cad200fee4718fbe2dac603daa4c0acedcffe6a1e465`;
-    const uri = `https+json://USD/${apiEndpoint}`;
-
     await sendTransaction([
       {
         account: CONTRACT_ACCOUNT,
@@ -26,7 +23,7 @@ async function action() {
           }
         ],
         data: {
-          symbolCode: `EOS`
+          symbolCode: `WAX`
         }
       }
     ]);
