@@ -11,6 +11,12 @@ To compile for WAX set the sidechain option:
 zeus compile pricefeed --sidechain liquidxxxwax
 ```
 
+## Pricefeed Table
+
+The latest aggregated price can be found in the `priceaverage` table using the token symbol as scope (f.i., `WAX`):
+
+https://wax.bloks.io/account/globaloracle?loadContract=true&tab=Tables&table=priceaverage&account=globaloracle&scope=WAX&limit=100
+
 ## License
 
 Malta Block Pricefeed is [MIT licensed](./LICENSE).
